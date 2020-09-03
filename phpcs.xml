@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<ruleset name="PSR12">
+    <!-- Phpcs configuration -->
+    <description>Oncourse Custom ruleset</description>
+
+    <!-- Default paths to check -->
+    <file>./app</file>
+
+    <rule ref="PSR12" />
+
+    <arg name="colors"/>
+    <arg name="parallel=4"/>
+</ruleset>
