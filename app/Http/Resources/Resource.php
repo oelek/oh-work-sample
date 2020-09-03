@@ -17,11 +17,10 @@ class Resource extends JsonResource
      */
     public function toArray($request)
     {
-
         return [
             'type'       => $this->getResourceType(),
             'id'         => $this->id,
-            'attributes' => $this->getAttributes(),
+            'attributes' => $this->getResourceAttributes(),
         ];
     }
 
@@ -29,12 +28,11 @@ class Resource extends JsonResource
     {
         $name = Str::plural(class_basename($this->resource));
 
-        return strtolower(basename($name));
+        return strtolower($name);
     }
 
-    public function getAttributes()
+    public function getResourceAttributes()
     {
-        return Arr::except($this->resource->getAttributes(), ['id']);
-        ;
+        return Arr::except($this->resource->toArray(), ['id']);
     }
 }

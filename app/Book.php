@@ -9,6 +9,10 @@ class Book extends Model
 {
     protected $table = 'books';
 
+    protected $appends = [
+        'cover',
+    ];
+
     public function authors()
     {
         return $this->belongsToMany(Author::class, 'authors_books');
@@ -22,5 +26,10 @@ class Book extends Model
     public function scopeSearch(Builder $queryBuilder, $field, $value = null)
     {
         return $queryBuilder->where($field, "%$value%");
+    }
+
+    public function getCoverAttribute()
+    {
+        return "http://covers.openlibrary.org/b/isbn/$this->isbn-L.jpg";
     }
 }
