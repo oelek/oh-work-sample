@@ -34,6 +34,7 @@ class Resource extends JsonResource
 
     public function getAttributes()
     {
-        return Arr::except($this->resource->getAttributes(), ['id']);;
+        return Arr::except($this->resource->getAttributes(), ['id']);
+        ;
     }
 }
