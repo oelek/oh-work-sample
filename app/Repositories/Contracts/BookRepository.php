@@ -4,7 +4,7 @@ namespace App\Repositories\Contracts;
 
 use Illuminate\Database\Eloquent\Collection;
 
-interface BookRepository
+interface BookRepository extends BaseRepository
 {
 
     public function getAuthors(string $bookId): Collection;
