@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 
 class Resource extends JsonResource
@@ -33,6 +34,6 @@ class Resource extends JsonResource
 
     public function getAttributes()
     {
-        return $this->resource->getAttributes();
+        return Arr::except($this->resource->getAttributes(), ['id']);;
     }
 }
