@@ -1,3 +1,4 @@
+
 # oh work sample
 
 ### Prerequisites
@@ -8,6 +9,8 @@
 * Clone the repository with `git clone git@github.com:oelek/oh-work-sample.git`
 * Change working dir `cd oh-work-sample`
 * Install dependencies `composer install`
+* Copy .env.example with `composer run post-root-package-install`
+* Generate key with `php artisan key:generate`
 * Start server `php artisan serve`
 
 ### Routes
